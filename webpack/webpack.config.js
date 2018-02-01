@@ -8,11 +8,23 @@ module.exports = {
   },
   devtool: 'eval-inline-source-map',
   module: {    
-    loaders: [{    
+    loaders: [
+      {    
         test: /\.(js|jsx)$/,    
         exclude: /node_modules/,
         loader: 'babel-loader'    
-    }]    
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        loader: 'style-loader!css-loader',
+      },
+      {
+        test: /\.less$/,
+        include: /node_modules/,
+        loader: 'style-loader!css-loader!less-loader',
+      }
+    ]    
   }, 
   plugins: [
     // new CleanWebpackPlugin(['dist']),

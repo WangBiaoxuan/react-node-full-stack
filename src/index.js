@@ -20,5 +20,6 @@ const render = Component => {
   )
 }
 
+
 render(Route);
 
