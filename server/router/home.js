@@ -17,10 +17,18 @@ router.get('/list', (req, res, next) => {
     ],
   })
 })
-router.get('/detail', (req, res, next) => {
+router.get('/detail/:id', (req, res, next) => {
+  console.log(req.params.id)
   res.json({
     code: 200,
     data: 'detail',
+    message: req.params.id
+  })
+})
+router.post('/create', (req, res) => {
+  console.log('reqbody', req.body)
+  res.send({
+    code: 0,
   })
 })
 module.exports = router;

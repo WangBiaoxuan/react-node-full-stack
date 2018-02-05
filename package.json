@@ -6,10 +6,14 @@
   "dependencies": {
     "antd-mobile": "^2.1.5",
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "css-loader": "^0.28.9",
     "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "http-proxy-middleware": "^0.17.4",
     "less-loader": "^4.0.5",
+    "moment": "^2.20.1",
     "nodemon": "^1.14.11",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -37,11 +41,8 @@
   "scripts": {
     "start": "node ./webpack/dev-server.js",
     "server": "nodemon ./server/index.js",
-    "build": "atool-build --config webpack.config.js",
-    "lt": "atool-build --config webpack.config.lt.js",
-    "dev": "atool-build --config ./build/webpack/webpack.config.dev.js",
-    "release": "atool-build --config ./build/webpack/webpack.config.release.js",
-    "test": "atool-test-mocha ./src/**/*-test.js",
+    "lt": "webpack --config ./webpack/webpack.config.lt.js --progress --color",
+    "release": "webpack --config ./webpack/webpack.config.release.js",
     "help": "gulp helper",
     "autogen": "plop --plopfile ./build/generator/index.js"
   }

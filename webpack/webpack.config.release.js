@@ -62,7 +62,7 @@ module.exports = {
       mangle: true
     }),
     new webpack.DefinePlugin({
-      'process.env.SCM_ENV': JSON.stringify('_LT_'),
+      'process.env.SCM_ENV': JSON.stringify('_PD_'),
       'process.env.CURRENT_VERSION_TIME': JSON.stringify(require('moment')().format('YYYY-MM-DD HH:mm:ss')),
     }),
   ],
